@@ -1,0 +1,293 @@
+python
+
+
+print(a.upper(),end=(""))
+
+return "" 			 ##jo v return karnge.. last m print ho jata h 
+
+n=int(input())			##to take a input
+
+print (("Hello %s %s! You just delved into python.") % (first_name, last_name))
+
+print ([1,12,123,1234][i])
+
+print(str(int(round(math.degrees(math.atan2(AB,BC)))))+'°')
+
+a=complex(input())
+print(abs(complex(a.real,a.imag)))
+print(phase(complex(a.real,a.imag)))
+
+sets----
+print set((1,2,3,4,5,5))
+
+
+calender
+
+to select an entire 2nd row of a 2d numpy array---
+np_baseball=baseball[1,:]
+
+np_baseball=np.array(baseball) + np.array([45,321,54])
+
+np.mean(baseball)
+np.median(baseball)
+
+corr = np.corrcoef((np_baseball[:,0]),(np_baseball[:,1]))
+
+
+
+import matplotlib.pyplot as plt--- sub package
+plt.plot(x,y)
+plt.show()
+
+plt.scatter(x,y)     ------plotting just the points not lines
+plt.xscale('log')    ------x scale can be changed
+
+plt.hist(life_exp)
+
+
+plt.clf() cleans it up again so you can start afresh.
+plt.hist(life_exp,5)
+   -----bins
+plt.hist(life_exp,bins=15)
+
+
+plt.xlabel(xlab)
+
+plt.ylabel(ylab)
+
+plt.xticks(tick_val,tick_lab)
+    ----- replace
+
+Add c = col to the arguments of the plt.scatter() function.
+Change the opacity of the bubbles by setting the alpha argument
+ to 0.8
+
+
+plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2,c=col,alpha=0.8)
+
+plt.text(1550, 71, 'India')
+
+plt.grid(True)
+                    ------ marking the gridlines
+
+
+
+
+
+for x in  np.nditer(np_baseball):
+     ----- np_baseball is a 2d  array, accesses all elements
+
+for lab,row in cars.iterrows():
+    
+print(lab)
+    
+print(row)
+
+
+# Code for loop that adds COUNTRY column
+
+for lab, row in cars.iterrows() :
+ 
+   cars.loc[lab, "COUNTRY"] = (row['country']).upper()
+
+
+cars["COUNTRY"] = cars["country"].apply(str.upper)
+-----one liner
+
+
+seed(): 
+sets the random seed, so that your results are the reproducible 
+between simulations. As an argument, it takes an integer of your 
+choosing. If you call the function, no output will be generated.
+np.random.seed(123)
+
+
+np.random.randint(4,8)            ---- 8 is  not included
+
+step=max(10,step-1)               ----- never goes below 10
+
+print(True>False)                 -----  true :P
+
+# Extract drives_right column as Series: dr
+
+dr=cars['drives_right']
+
+
+# Use dr to subset cars: sel
+
+sel=cars[dr]
+
+
+# Create medium: observations with cars_per_cap between 100 and 500
+
+cpc = cars['cars_per_cap']
+
+between = np.logical_and(cpc > 100, cpc < 500)
+
+medium = cars[between]                        ----- try one liner
+
+countries = ['spain', 'france', 'germany', 'norway']
+
+ind_ger=countries.index('germany')
+
+
+# Build cars DataFrame
+names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
+dr =  [True, False, False, False, True, True, True]
+cpc = [809, 731, 588, 18, 200, 70, 45]
+dict = { 'country':names, 'drives_right':dr, 'cars_per_cap':cpc }
+cars = pd.DataFrame(dict)
+print(cars)
+
+# Definition of row_labels
+
+row_labels = ['US', 'AUS', 'JAP', 'IN', 'RU', 'MOR', 'EG']
+
+
+# Specify row labels of cars
+
+cars.index=row_labels
+
+cars['cars_per_cap']
+cars[['cars_per_cap']]
+The single bracket version gives a Pandas Series, the double bracket version gives a Pandas DataFrame.
+
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+
+# Print out first 3 observations
+print(cars[0:3])
+
+# Print out observation for Japan
+
+print(cars.iloc[2])
+
+
+# Print out observations for Australia and Egypt
+                  ------ data selection
+print(cars.loc[['AUS', 'EG']])
+
+# Import cars data
+
+import pandas as pd
+
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+
+# Print out drives_right column as Series
+
+print(cars.iloc[:, 2])
+
+
+# Print out drives_right column as DataFrame
+
+print(cars.iloc[:, [2]])
+
+
+# Print out cars_per_cap and drives_right as DataFrame
+
+print(cars.loc[:, ['cars_per_cap', 'drives_right']])
+
+
+echo_word = (lambda word1,echo:word1*echo)
+
+
+result = filter( lambda member: len(member)>6 , fellowship)
+
+
+
+
+
+    # Add exception handling with try-except
+    try:
+        # Concatenate echo copies of word1 using *: echo_word
+        echo_word = word1*echo
+
+        # Concatenate '!!!' to echo_word: shout_words
+        shout_words = echo_word+'!!!'
+    except:
+        # Print error message
+        print("word1 must be a string and echo must be an integer.")
+
+
+# Raise an error with raise
+   
+if echo<0:
+
+raise ValueError('echo must be greater than 0')
+
+# Define three_shouts
+def three_shouts(word1, word2, word3):
+    """Returns a tuple of strings
+    concatenated with '!!!'."""
+
+    # Define inner
+    def inner(word):
+        """Returns a string concatenated with '!!!'."""
+        return word + '!!!'
+
+    # Return a tuple of strings
+    return (inner(word1), inner(word2), inner(word3))
+
+# Call three_shouts() and print
+print(three_shouts('a', 'b', 'c'))
+
+Dealing with files
+file=open('samole.txt','r')
+print(file.read())
+file.close()
+
+with open('sample.txt') as file:
+   print(file.readline())			--- print first line
+   print(file.readline())			--- print 2nd line
+   print(file.readline())			--- print 3rd line
+   
+
+data = np.loadtxt(file, delimiter='\t', skiprows=1, usecols=[0,3])
+
+What if there are rows, such as a header, that you don't want to import? What if your file has a delimiter other than a comma? What if you only wish to import particular columns?
+
+You have just used np.genfromtxt() to import data containing mixed datatypes. There is also another function np.recfromcsv() that behaves similarly to np.genfromtxt(), except that its default dtype is None. In this exercise, you'll practice using this to achieve the same result.
+
+INSTRUCTIONS
+100 XP
+Import titanic.csv using the function np.recfromcsv() and assign it to the variable, d. You'll only need to pass file to it because it has the defaults delimiter=',' and names=True in addition to dtype=None!
+
+# Read the file into a DataFrame: df
+
+df = pd.read_csv(file)
+
+
+# View the head of the DataFrame
+
+print(df.head())
+
+
+# Read the first 5 rows of the file into a DataFrame: data
+
+data=pd.read_csv(file,nrows=5,header=None)
+
+data_array = data.values
+
+
+data = pd.read_csv(file, sep='\t', comment='#', na_values=['Nothing'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
